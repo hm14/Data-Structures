@@ -21,6 +21,20 @@ class LinkedList(object):
 		else:
 			return None
 
+	# gets position of the element at the given number
+	# gets 2nd element's position for position=2
+	def get_position(self, position):
+		if self.head:
+			counter = 1
+			current = self.head
+			if position >= 1:
+				while current and counter <= position:
+					if counter == position:
+						return current
+					current = current.next
+					counter += 1
+		return None
+
 	# adds an element to the end of the linkedlist
 	def add_item(self, element):
 		if self.head:
