@@ -74,3 +74,19 @@ class LinkedList(object):
 			elif position == 1:
 				new_element.next = self.head
 				self.head = new_element
+				
+	# removes item from a given location
+	def remove_item_from(self, position):
+		if self.head:
+			previous = None
+			current = self.head
+			current_position = 1
+			if position > 1:
+				while current_position <= position and current:
+					if current_position == position:
+						previous.next = current.next
+					previous = current
+					current = current.next
+					current_position += 1
+			elif position == 1:
+				self.head = current.next
