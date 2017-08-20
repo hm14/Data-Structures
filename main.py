@@ -9,6 +9,8 @@ element4 = Element(8)
 element5 = Element(7)
 element6 = Element(9)
 element7 = Element(2)
+element8 = Element(18)
+element9 = Element(19)
 
 # create an instance of LinkedList with head = element1
 list1 = LinkedList(element1)
@@ -18,8 +20,6 @@ list1.add_item(element2)
 list1.add_item(element3)
 list1.add_item(element4)
 list1.add_item(element5)
-list1.add_item(element6)
-list1.add_item(element7)
 
 # print values to confirm that items were added
 print list1.show_all()
@@ -33,3 +33,19 @@ print list1.show_all()
 
 # print position of the element at the position = 2
 print list1.get_position(2)
+
+# insert items at a given position
+list1.insert_item(element6, 1)
+# print values to confirm that items were added
+print list1.show_all()
+
+# insert items at a given position
+list1.insert_item(element7, 4)
+# print values to confirm that items were added
+print list1.show_all()
+
+# insert items at a given position
+list1.insert_item(element8, 2)
+# print values to confirm that items were added
+print list1.show_all()
+
