@@ -57,4 +57,20 @@ class LinkedList(object):
 				else:
 					self.head = current.next
 
-
+	# inserts new item at a given position instead of at end of list
+	def insert_item(self, new_element, position):
+		if self.head:
+			previous = None
+			current = self.head
+			current_position = 1
+			if position > 1:
+				while current_position <= position and current:
+					if current_position == position:
+						previous.next = new_element
+						new_element.next = current
+					previous = current
+					current = current.next
+					current_position += 1
+			elif position == 1:
+				new_element.next = self.head
+				self.head = new_element
