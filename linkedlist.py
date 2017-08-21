@@ -21,20 +21,6 @@ class LinkedList(object):
 		else:
 			return None
 
-	# gets position of the element at the given number
-	# gets 2nd element's position for position=2
-	def get_position(self, position):
-		if self.head:
-			counter = 1
-			current = self.head
-			if position >= 1:
-				while current and counter <= position:
-					if counter == position:
-						return current
-					current = current.next
-					counter += 1
-		return None
-
 	# adds an element to the end of the linkedlist
 	def add_item(self, element):
 		if self.head:
@@ -57,6 +43,20 @@ class LinkedList(object):
 				else:
 					self.head = current.next
 
+	# gets position of the element at the given number
+	# gets 2nd element's position for position=2
+	def get_position(self, position):
+		if self.head:
+			counter = 1
+			current = self.head
+			if position >= 1:
+				while current and counter <= position:
+					if counter == position:
+						return current
+					current = current.next
+					counter += 1
+		return None
+
 	# inserts new item at a given position instead of at end of list
 	def insert_item(self, new_element, position):
 		if self.head:
@@ -74,7 +74,7 @@ class LinkedList(object):
 			elif position == 1:
 				new_element.next = self.head
 				self.head = new_element
-				
+
 	# removes item from a given location
 	def remove_item_from(self, position):
 		if self.head:
@@ -90,3 +90,16 @@ class LinkedList(object):
 					current_position += 1
 			elif position == 1:
 				self.head = current.next
+
+	# deletes first item with a given value from the linked list
+	def delete_item(self, value):
+		if self.head.value == value:
+			self.head = self.head.next
+		else:
+			previous = None
+			current = self.head
+			while current.value != value and current.next:
+				previous = current
+				current = current.next
+			if current.value == value:
+				previous.next = current.next
