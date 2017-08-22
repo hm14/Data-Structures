@@ -1,6 +1,7 @@
 from linkedlist import Element
 from linkedlist import LinkedList
 from stack import Stack
+from queue import Queue
 
 # create a instances of Element
 element1 = Element(5)
@@ -14,6 +15,10 @@ element8 = Element(18)
 element9 = Element(19)
 element10 = Element(10)
 element11 = Element(82)
+element12 = Element(21)
+element13 = Element(68)
+element14 = Element(32)
+element15 = Element(55)
 
 # create an instance of LinkedList with head = element1
 list1 = LinkedList(element1)
@@ -24,6 +29,7 @@ list1.add_item(element3)
 list1.add_item(element4)
 list1.add_item(element5)
 
+print '* * * * * LINKED LIST STUFF * * * * *'
 # print values to confirm that items were added
 print 'adding multiple elements to linked list'
 print list1.show_all()
@@ -68,22 +74,44 @@ list1.delete_item(8)
 print 'deleting 8:'
 print list1.show_all()
 
+print '* * * * * STACK STUFF * * * * *'
 # create an instance of LinkedList with head = element1
 print 'creating a new stack'
-stack = Stack(element1)
+stack = Stack(element8)
 
 # add a few elements to the LinkedList instance
-stack.push(element8)
+print 'adding multiple items to stack'
+print stack.show_all()
 stack.push(element9)
+print stack.show_all()
 stack.push(element10)
+print stack.show_all()
 stack.push(element11)
 
 #print values to confirm that elements were added to stack
-print 'adding multiple items to stack'
 print stack.show_all()
 
 print 'removing multiple items from stack'
 stack.pop()
-stack.pop()
+print stack.show_all()
 stack.pop()
 print stack.show_all()
+
+print '* * * * * QUEUE STUFF * * * * *'
+print 'creating queue'
+queue = Queue(element12)
+print 'adding multiple items to queue'
+print queue.show_all()
+queue.push(element13)
+print queue.show_all()
+queue.push(element14)
+print queue.show_all()
+queue.push(element15)
+print queue.show_all()
+print 'removing multiple items from queue'
+queue.pop()
+print queue.show_all()
+queue.pop()
+print queue.show_all()
+queue.pop()
+print queue.show_all()
