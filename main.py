@@ -3,7 +3,7 @@ from linkedlist import LinkedList
 from stack import Stack
 from queue import Queue
 
-# create a instances of Element
+# create instances of Element
 element1 = Element(5)
 element2 = Element(0)
 element3 = Element(2)
